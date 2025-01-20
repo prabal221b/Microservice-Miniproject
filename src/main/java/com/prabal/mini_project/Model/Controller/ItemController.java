@@ -27,23 +27,24 @@ public class ItemController {
 	}
 	
 	@GetMapping("/{id}")
-	public Item getById(Long id) {
+	public Item getById(@PathVariable Long id) {
 		return itemService.getItemsById(id);
 	}
 	
 	@PostMapping
-	public Item addItem(Item item) {
+	public Item addItem(@RequestBody Item item) {
 		return itemService.addItem(item);
 	}
 	
 	@PutMapping("/{id}")
-	public void updateItem(@RequestBody Item updatedItem) {
-		itemService.updateItem(updatedItem);
+	public void updateItem(@PathVariable Long id, @RequestBody Item updatedItem) {
+		itemService.updateItemById(id, updatedItem);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteItemById(@PathVariable Long id) {
-		itemService.deleteItem(id);
+	public String deleteItemById(@PathVariable Long id) {
+		return itemService.deleteItem(id);
+		
 	}
 	
 }

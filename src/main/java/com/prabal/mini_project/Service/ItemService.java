@@ -25,17 +25,16 @@ public class ItemService {
 		return itemRepository.save(item);
 	}
 	
-	public void deleteItem(Long id) {
+	public Item updateItemById(Long id, Item updateItem) {
 		if(itemRepository.existsById(id)) {
-			itemRepository.deleteById(id);
+			return itemRepository.save(updateItem);
 		}
 		throw new RuntimeException("Item does not exist");
 	}
 	
-	public Item updateItem(Item updateItem) {
-		if(itemRepository.existsById(updateItem.getId())) {
-			return itemRepository.save(updateItem);
-		}
-		throw new RuntimeException("Item does not exist");
+	public String deleteItem(Long id) {
+		
+		itemRepository.deleteById(id);
+		return "Item Deleted!";
 	}
 }

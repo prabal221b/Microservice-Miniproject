@@ -17,7 +17,12 @@ public class Item {
 	private Long id;
 	private String itemName;
 	private int itemPrice;
+	
+	
 		
+	public Item() {
+
+	}
 	public Item(Long id, String itemName, int itemPrice) {
 		super();
 		this.id = id;
