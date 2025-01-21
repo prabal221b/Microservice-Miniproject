@@ -1,4 +1,4 @@
-package com.prabal.mini_project.Model.Controller;
+package com.prabal.mini_project.Controller;
 
 import java.util.List;
 
