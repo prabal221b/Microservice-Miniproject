@@ -1,6 +1,7 @@
 package com.prabal.mini_project.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,15 +19,17 @@ public class ItemService {
 	}
 	
 	public Item getItemsById(Long id){
-		return itemRepository.getReferenceById(id); //getById is depreciated
+		Optional<Item> userOptional = itemRepository.findById(id); 
+		return userOptional.orElse(null);
 	}
+         
 	
 	public Item addItem(Item item) {
 		return itemRepository.save(item);
 	}
 	
-	public Item updateItemById(Long id, Item updateItem) {
-		if(itemRepository.existsById(id)) {
+	public Item updateItemById(Item updateItem) {
+		if(itemRepository.existsById(updateItem.getId())) {
 			return itemRepository.save(updateItem);
 		}
 		throw new RuntimeException("Item does not exist");

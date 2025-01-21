@@ -37,8 +37,8 @@ public class ItemController {
 	}
 	
 	@PutMapping("/{id}")
-	public void updateItem(@PathVariable Long id, @RequestBody Item updatedItem) {
-		itemService.updateItemById(id, updatedItem);
+	public Item updateItem(@RequestBody Item updatedItem) {
+		return itemService.updateItemById(updatedItem);
 	}
 	
 	@DeleteMapping("/{id}")
