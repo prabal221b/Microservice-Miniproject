@@ -36,7 +36,7 @@ public class ItemController {
 		return itemService.addItem(item);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping
 	public Item updateItem(@RequestBody Item updatedItem) {
 		return itemService.updateItemById(updatedItem);
 	}

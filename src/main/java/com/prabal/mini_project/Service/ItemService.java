@@ -36,8 +36,13 @@ public class ItemService {
 	}
 	
 	public String deleteItem(Long id) {
+		if(itemRepository.existsById(id)) {
+			itemRepository.deleteById(id);
+			return "Item Deleted!";
+		}
+		else {
+			return "Item does not Exist";
+		}
 		
-		itemRepository.deleteById(id);
-		return "Item Deleted!";
 	}
 }
