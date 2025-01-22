@@ -44,7 +44,5 @@ public class ItemController {
 	@DeleteMapping("/{id}")
 	public String deleteItemById(@PathVariable Long id) {
 		return itemService.deleteItem(id);
-		
 	}
-	
 }
