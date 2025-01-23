@@ -1,4 +1,4 @@
-package com.prabal.mini_project.Service;
+package com.prabal.mini_project.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.prabal.mini_project.Model.Item;
-import com.prabal.mini_project.Repository.ItemRepository;
+import com.prabal.mini_project.entities.Item;
+import com.prabal.mini_project.repository.ItemRepository;
 
 @Service
 public class ItemService {

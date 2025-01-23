@@ -1,4 +1,4 @@
-package com.prabal.mini_project.Controller;
+package com.prabal.mini_project.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prabal.mini_project.Model.Item;
-import com.prabal.mini_project.Service.ItemService;
+import com.prabal.mini_project.entities.Item;
+import com.prabal.mini_project.service.ItemService;
 
 @RestController
 @RequestMapping("/items")

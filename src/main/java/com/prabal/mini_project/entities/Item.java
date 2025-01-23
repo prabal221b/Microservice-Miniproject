@@ -1,4 +1,4 @@
-package com.prabal.mini_project.Model;
+package com.prabal.mini_project.entities;
 
 
 import jakarta.persistence.Entity;
