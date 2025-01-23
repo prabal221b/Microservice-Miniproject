@@ -29,15 +29,8 @@ public class SecurityConfig {
            http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/home/**").hasRole("ADMIN")
-                        .requestMatchers("/items/**").hasRole("ADMIN")
+                        .requestMatchers("/items/**").hasRole("USER")
                         .anyRequest().authenticated()
-                )
-                .formLogin(withDefaults())
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login")
-                        .invalidateHttpSession(true)
-                        .permitAll()
                 )
                 .httpBasic(withDefaults());
 
