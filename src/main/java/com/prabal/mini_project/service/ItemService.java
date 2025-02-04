@@ -22,7 +22,6 @@ public class ItemService {
 		Optional<Item> userOptional = itemRepository.findById(id); 
 		return userOptional.orElse(null);
 	}
-         
 	
 	public Item addItem(Item item) {
 		return itemRepository.save(item);
@@ -33,7 +32,6 @@ public class ItemService {
 			return itemRepository.save(updateItem);
 		}
 		throw new RuntimeException("Item does not exist");
-
 	}
 	
 	public String deleteItem(Long id) {
@@ -44,6 +42,8 @@ public class ItemService {
 		else {
 			return "Item does not Exist";
 		}
-		
 	}
+
+
+
 }
